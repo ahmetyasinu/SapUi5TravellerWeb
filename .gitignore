@@ -1,0 +1,24 @@
+UI5StarterKit.ai
+UI5StarterKit
+
+### macOS ###
+*.DS_Store
+
+### IDE (Atom/Webstorm/etc) ###
+/.imdone/
+/.idea/
+/.settings/
+/.vscode/
+
+### Build Process ###
+/dist/
+/ui5/
+/.tmp/
+/.maps/
+/.download/
+/src/libs/*
+.eslintcache
+
+### Node ###
+node_modules/
+*.log

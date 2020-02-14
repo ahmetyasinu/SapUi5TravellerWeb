@@ -1,0 +1,90 @@
+<mvc:View
+  controllerName="app.controller.Traveller"
+  xmlns="sap.ui.table"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:u="sap.ui.unified"
+  xmlns:c="sap.ui.core"
+  xmlns:m="sap.m"
+
+  height="100%">
+  <m:Page
+
+    showHeader="false"
+    enableScrolling="false"
+    class="sapUiContentPadding">
+    <m:content>
+      <Table
+        rows="{traveller>/}"
+        selectionMode="MultiToggle"
+        visibleRowCount="7"
+        paste="onPaste"
+        ariaLabelledBy="title">
+        <extension>
+          <m:OverflowToolbar>
+            <m:Title id="title" text="Seyahat eden Kişilerin Listesi"/>
+            <m:ToolbarSpacer/>
+            <m:Button text="Yeni Seyahat" type="Emphasized" press="onPressAdd"/>
+          </m:OverflowToolbar>
+        </extension>
+        <columns>
+          <Column width="11rem">
+            <m:Label text="Kullanıcı Adı"/>
+            <template>
+              <m:Text text="{traveller>userName}" wrapping="false"/>
+            </template>
+          </Column>
+          <Column width="11rem">
+            <m:Label text="Varış Yeri"/>
+            <template>
+              <m:Text text="{traveller>destination}" wrapping="false"/>
+            </template>
+          </Column>
+          <Column width="11rem">
+            <m:Label text="Amaç"/>
+            <template>
+              <m:Text text="{traveller>purpose}" wrapping="false"/>
+            </template>
+          </Column>
+          <Column width="11rem">
+            <m:Label text="Proje Kodu"/>
+            <template>
+              <m:Text text="{traveller>projectCode}" wrapping="false"/>
+            </template>
+          </Column>
+          <Column width="9rem">
+            <m:Label text="Ücret"/>
+            <template>
+              <m:Text text="{traveller>cost}"/>
+            </template>
+          </Column>
+          <Column width="11rem" hAlign="Center">
+            <m:Label text="Başlangıç Tarihi"/>
+            <template>
+              <m:DatePicker editable="false" value="{traveller>startDate}" placeholder="Tarih Belirleyin"/>
+            </template>
+          </Column>
+          <Column width="11rem" hAlign="Center">
+            <m:Label text="Bitiş Tarihi"/>
+            <template>
+              <m:DatePicker editable="false" change="disable" value="{traveller>endDate}" />
+            </template>
+          </Column>
+          <Column width="11rem" hAlign="Center">
+            <m:Label text="Güncelle"/>
+            <template>
+              <m:Button text="Seyahat Güncelle" type="Emphasized"
+                        press="onUpdateTravel"/>
+            </template>
+          </Column>
+          <Column width="11rem" hAlign="Center">
+            <m:Label text="Sil"/>
+            <template>
+              <m:Button text="Seyahat Sil" type="Emphasized"
+                        press="onDeleteTravel"/>
+            </template>
+          </Column>
+        </columns>
+      </Table>
+    </m:content>
+  </m:Page>
+</mvc:View>

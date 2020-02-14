@@ -1,0 +1,79 @@
+<mvc:View
+  controllerName="app.controller.Add"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:l="sap.ui.layout"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:core="sap.ui.core"  height="100%">
+  <VBox class="sapUiSmallMargin">
+    <f:Form id="FormChange354"
+            editable="true">
+      <f:title>
+        <core:Title text="Seyahat eden kişi Ekle" />
+      </f:title>
+      <f:layout>
+        <f:ResponsiveGridLayout
+          labelSpanXL="3"
+          labelSpanL="3"
+          labelSpanM="3"
+          labelSpanS="12"
+          adjustLabelSpan="false"
+          emptySpanXL="5"
+          emptySpanL="5"
+          emptySpanM="5"
+          emptySpanS="0"
+          columnsXL="1"
+          columnsL="1"
+          columnsM="1"
+        />
+      </f:layout>
+      <f:formContainers>
+        <f:FormContainer>
+          <f:formElements>
+            <f:FormElement label="Kullanıcı Adı">
+              <f:fields>
+                <Input value="{add>/userName}" />
+              </f:fields>
+            </f:FormElement>
+            <f:FormElement label="Varış Yeri">
+              <f:fields>
+                <Input value="{add>/destination}" />
+              </f:fields>
+            </f:FormElement>
+            <f:FormElement label="Amaç">
+              <f:fields>
+                <Input value="{add>/purpose}" />
+              </f:fields>
+            </f:FormElement>
+            <f:FormElement label="Proje Kodu">
+              <f:fields>
+                <Input value="{add>/projectCode}" />
+              </f:fields>
+            </f:FormElement>
+            <f:FormElement label="Cost">
+              <f:fields>
+                <Input value="{add>/cost}" />
+              </f:fields>
+            </f:FormElement>
+            <f:FormElement label="Başlama Zamanı">
+              <f:fields>
+                <DatePicker value="{add>/startDate}" placeholder="Tarih Belirleyin"/>
+              </f:fields>
+            </f:FormElement>
+            <f:FormElement label="Bitiş Zamanı">
+              <f:fields>
+                <DatePicker value="{add>/endDate}" placeholder="Tarih Belirleyin"/>
+              </f:fields>
+            </f:FormElement>
+          </f:formElements>
+        </f:FormContainer>
+      </f:formContainers>
+    </f:Form>
+    <Button type="Accept" text="Ekle" press="addTravels" ariaDescribedBy="acceptButtonDescription genericButtonDescription">
+      <layoutData>
+        <FlexItemData growFactor="1" />
+      </layoutData>
+    </Button>
+  </VBox>
+</mvc:View>
+
